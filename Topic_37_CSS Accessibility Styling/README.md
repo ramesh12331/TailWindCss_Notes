@@ -17,30 +17,33 @@ body {
   background-color: #ffffff;
   color: #000000;
 }
-Bad Example:
+```
 
+**Bad Example:**
+```css
 body {
   background-color: #eeeeee;
   color: #cccccc;
 }
+```
 
-2️⃣ Use Readable Fonts, Font Size & Line Height
-Use simple fonts, proper font size, and sufficient line height.
+---
+
+### 2️⃣ Use Readable Fonts, Font Size & Line Height
+Use simple fonts, proper font size, and sufficient line height.  
 Use relative units like rem for scaling.
 
-Good Example:
-
-css
-Copy code
+**Good Example:**
+```css
 body {
   font-family: Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
 }
-Bad Example:
+```
 
-css
-Copy code
+**Bad Example:**
+```css
 body {
   font-family: Georgia, serif;
   font-size: 12px;
@@ -48,38 +51,46 @@ body {
   font-variant: small-caps;
   line-height: 90%;
 }
-3️⃣ Have Visible Focus Indicators
+```
+
+---
+
+### 3️⃣ Have Visible Focus Indicators
 Interactive elements like links, buttons, and inputs should have clear focus outlines.
 
-css
-Copy code
+```css
 a:focus,
 button:focus,
 input:focus {
   outline: 2px solid orange;
 }
-4️⃣ Avoid Hiding Focus
+```
+
+---
+
+### 4️⃣ Avoid Hiding Focus
 Never remove focus outlines without replacement.
 
-❌ Bad Example:
-
-css
-Copy code
+❌ **Bad Example:**
+```css
 button:focus {
   outline: none;
 }
-✅ Good Example:
+```
 
-css
-Copy code
+✅ **Good Example:**
+```css
 button:focus {
   outline: 2px solid orange;
 }
-5️⃣ Use CSS + Semantic HTML
+```
+
+---
+
+### 5️⃣ Use CSS + Semantic HTML
 Use CSS for styling and semantic HTML for structure.
 
-css
-Copy code
+```css
 nav {
   background-color: #333333;
   color: white;
@@ -89,75 +100,83 @@ aside {
   background-color: #333333;
   color: white;
 }
-Semantic HTML elements:
-<header>, <nav>, <main>, <footer>, <section>, <article>, <aside>
+```
 
-6️⃣ Respect User Preferences
+**Semantic HTML elements:** `<header>`, `<nav>`, `<main>`, `<footer>`, `<section>`, `<article>`, `<aside>`
+
+---
+
+### 6️⃣ Respect User Preferences
 Some users prefer reduced motion. Use prefers-reduced-motion media query.
 
-css
-Copy code
+```css
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
   }
 }
-📊 Diagram (Summary)
-High contrast text → easier to read
+```
 
-Readable fonts → better UX
+---
 
-Focus outlines → keyboard navigation
+## 📊 Diagram (Summary)
 
-Semantic HTML → clear structure
+- High contrast text → easier to read  
+- Readable fonts → better UX  
+- Focus outlines → keyboard navigation  
+- Semantic HTML → clear structure  
+- Reduced motion → respects user preference  
 
-Reduced motion → respects user preference
+---
 
-✨ Tailwind CSS Examples
-High contrast text:
+## ✨ Tailwind CSS Examples
 
-html
-Copy code
+- High contrast text:
+```html
 <p class="text-black bg-white">High contrast text</p>
-Focus outline:
+```
 
-html
-Copy code
+- Focus outline:
+```html
 <button class="focus:outline-orange-500 focus:outline-2">Click Me</button>
-Readable font & line height:
+```
 
-html
-Copy code
+- Readable font & line height:
+```html
 <p class="font-sans text-base leading-relaxed">Accessible paragraph</p>
-Reduced motion:
+```
 
-html
-Copy code
+- Reduced motion:
+```html
 <div class="motion-safe:animate-bounce motion-reduce:animate-none">Bounce Box</div>
-✋ Interview Q&A
-🙋 Q1: Why is CSS accessibility important?
-👉 A1: Ensures websites are usable by everyone, including users with disabilities.
+```
 
-🙋 Q2: What is good color contrast?
-👉 A2: Text and background colors should differ enough to be readable.
+---
 
-🙋 Q3: Why use :focus styles?
-👉 A3: Helps keyboard and screen-reader users know which element is active.
+## ✋ Interview Q&A
 
-🙋 Q4: What is prefers-reduced-motion?
-👉 A4: A media query to respect users who prefer less animation.
+🙋 **Q1:** Why is CSS accessibility important?  
+👉 **A1:** Ensures websites are usable by everyone, including users with disabilities.  
 
-🙋 Q5: Why use semantic HTML?
-👉 A5: Provides better structure and accessibility for assistive technologies.
+🙋 **Q2:** What is good color contrast?  
+👉 **A2:** Text and background colors should differ enough to be readable.  
 
-✅ Best Practices
-High contrast text for readability
+🙋 **Q3:** Why use :focus styles?  
+👉 **A3:** Helps keyboard and screen-reader users know which element is active.  
 
-Easily readable fonts, font size, and line height
+🙋 **Q4:** What is prefers-reduced-motion?  
+👉 **A4:** A media query to respect users who prefer less animation.  
 
-Keep focus outlines visible
+🙋 **Q5:** Why use semantic HTML?  
+👉 **A5:** Provides better structure and accessibility for assistive technologies.  
 
-Use semantic HTML
+---
 
-Respect user motion preferences
+## ✅ Best Practices
+
+- High contrast text for readability  
+- Easily readable fonts, font size, and line height  
+- Keep focus outlines visible  
+- Use semantic HTML  
+- Respect user motion preferences  
