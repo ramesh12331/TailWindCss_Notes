@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@layer utilities {
+  /* Example 1: Simple color change */
+  @keyframes colorChange {
+    from {background-color: red;}
+    to   {background-color: yellow;}
+  }
+  .animate-colorChange { animation: colorChange 4s linear; }
+
+  /* Example 2: Multiple colors */
+  @keyframes multiColor {
+    0%   {background-color:red;}
+    25%  {background-color:yellow;}
+    50%  {background-color:blue;}
+    100% {background-color:green;}
+  }
+  .animate-multiColor { animation: multiColor 4s linear; }
+
+  /* Example 3: Square movement + color change */
+  @keyframes squarePath {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+  }
+  .animate-squarePath { animation: squarePath 4s linear; }
+
+  /* Example 4: Animation delay */
+  .animate-squarePathDelay { animation: squarePath 4s linear 2s; }
+
+  /* Example 5: Negative delay */
+  .animate-squarePathNegDelay { animation: squarePath 4s linear -2s; }
+
+  /* Example 6: Infinite iteration */
+  .animate-squarePathInfinite { animation: squarePath 4s linear infinite; }
+
+  /* Example 7: Timing functions */
+  .animate-linear    { animation: moveLeft 5s linear; }
+  .animate-ease      { animation: moveLeft 5s ease; }
+  .animate-easeIn    { animation: moveLeft 5s ease-in; }
+  .animate-easeOut   { animation: moveLeft 5s ease-out; }
+  .animate-easeInOut { animation: moveLeft 5s ease-in-out; }
+
+  @keyframes moveLeft {
+    from { left: 0px; }
+    to   { left: 300px; }
+  }
+
+  /* Example 8: Fill mode forwards + backwards */
+  .animate-fillBoth { animation: squarePath 4s linear both; }
+
+  /* Example 9: Alternate reverse direction */
+  .animate-altReverse { animation: squarePath 4s linear infinite alternate-reverse; }
+
+  /* Example 10: Shorthand animation property */
+  .animate-shorthand { animation: squarePath 5s linear 2s infinite alternate; }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tailwind Animation Demo</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@layer utilities {
+  /* Square movement + color change */
+  @keyframes squarePath {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+  }
+
+  /* Move left animation (for timing function demo) */
+  @keyframes moveLeft {
+    from { left: 0px; }
+    to   { left: 300px; }
+  }
+
+  /* Utility classes for different animation examples */
+  .animate-squarePath { animation: squarePath 4s linear; }
+  .animate-squarePathDelay { animation: squarePath 4s linear 2s; }
+  .animate-squarePathNegDelay { animation: squarePath 4s linear -2s; }
+  .animate-squarePathInfinite { animation: squarePath 4s linear infinite; }
+  .animate-fillBoth { animation: squarePath 4s linear both; }
+  .animate-altReverse { animation: squarePath 4s linear infinite alternate-reverse; }
+  
+  /* Timing functions */
+  .animate-linear    { animation: moveLeft 5s linear; }
+  .animate-ease      { animation: moveLeft 5s ease; }
+  .animate-easeIn    { animation: moveLeft 5s ease-in; }
+  .animate-easeOut   { animation: moveLeft 5s ease-out; }
+  .animate-easeInOut { animation: moveLeft 5s ease-in-out; }
+
+  /* Shorthand animation */
+  .animate-shorthand { animation: squarePath 5s linear 2s infinite alternate; }
+}
+</style>
+</head>
+<body class="p-8 bg-gray-100 space-y-8">
+
+<h1 class="text-2xl font-bold">Tailwind CSS Animation Demo</h1>
+
+<!-- Square Path Movement -->
+<div class="w-24 h-24 relative animate-squarePath"></div>
+<div class="w-24 h-24 relative animate-squarePathDelay mt-4"></div>
+<div class="w-24 h-24 relative animate-squarePathNegDelay mt-4"></div>
+<div class="w-24 h-24 relative animate-squarePathInfinite mt-4"></div>
+<div class="w-24 h-24 relative animate-fillBoth mt-4"></div>
+<div class="w-24 h-24 relative animate-altReverse mt-4"></div>
+<div class="w-24 h-24 relative animate-shorthand mt-4"></div>
+
+<!-- Timing Functions Demo -->
+<h2 class="text-xl font-semibold mt-8">Timing Functions Demo</h2>
+<div class="w-24 h-12 relative bg-red-500 animate-linear mt-2"></div>
+<div class="w-24 h-12 relative bg-red-500 animate-ease mt-2"></div>
+<div class="w-24 h-12 relative bg-red-500 animate-easeIn mt-2"></div>
+<div class="w-24 h-12 relative bg-red-500 animate-easeOut mt-2"></div>
+<div class="w-24 h-12 relative bg-red-500 animate-easeInOut mt-2"></div>
+
+</body>
+</html>

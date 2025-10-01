@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tailwind CSS Transition Examples</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@layer utilities {
+  /* Custom transition for width */
+  .transition-width { transition-property: width; }
+  .transition-width-delay { transition-property: width; transition-duration: 2s; transition-delay: 3s; }
+
+  /* Multiple properties transition: width, height, background-color */
+  .transition-multi { transition-property: width, height, background-color; transition-duration: 2s, 4s, 3s; }
+
+  /* Transition + transform + multiple properties */
+  .transition-transform-multi { transition-property: width, height, background-color, transform; transition-duration: 2s; }
+
+  /* Width transition with timing functions */
+  .transition-linear { transition-property: width; transition-duration: 2s; transition-timing-function: linear; }
+  .transition-ease { transition-property: width; transition-duration: 2s; transition-timing-function: ease; }
+  .transition-ease-in { transition-property: width; transition-duration: 2s; transition-timing-function: ease-in; }
+  .transition-ease-out { transition-property: width; transition-duration: 2s; transition-timing-function: ease-out; }
+  .transition-ease-in-out { transition-property: width; transition-duration: 2s; transition-timing-function: ease-in-out; }
+}
+</style>
+</head>
+<body class="p-8 space-y-8 bg-gray-100">
+
+<h1 class="text-2xl font-bold">Tailwind CSS Transition Examples</h1>
+
+<!-- 1. Simple width transition with delay -->
+<div class="w-24 h-24 bg-green-500 relative transition-width-delay hover:w-72"></div>
+
+<!-- 2. Multiple properties transition -->
+<div class="w-24 h-24 bg-red-500 relative transition-multi hover:w-72 hover:h-72 hover:bg-orange-500"></div>
+
+<!-- 3. Transition + transform -->
+<div class="w-24 h-24 bg-red-500 relative transition-transform-multi hover:w-72 hover:h-72 hover:bg-orange-500 hover:rotate-180"></div>
+
+<!-- 4. Button hover transition -->
+<button class="bg-gray-300 px-4 py-2 rounded transition-colors transition-transform duration-[1000ms] ease-out hover:bg-green-300 hover:scale-110">
+  Hover Me
+</button>
+
+<!-- 5. Width transition with different timing functions -->
+<div class="w-24 h-24 bg-red-500 relative transition-linear hover:w-72 mt-4"></div>
+<div class="w-24 h-24 bg-red-500 relative transition-ease hover:w-72 mt-2"></div>
+<div class="w-24 h-24 bg-red-500 relative transition-ease-in hover:w-72 mt-2"></div>
+<div class="w-24 h-24 bg-red-500 relative transition-ease-out hover:w-72 mt-2"></div>
+<div class="w-24 h-24 bg-red-500 relative transition-ease-in-out hover:w-72 mt-2"></div>
+
+</body>
+</html>
