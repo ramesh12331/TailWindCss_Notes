@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Media Query Examples</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6 space-y-10">
+
+  <!-- 1. Simple background change on small screen -->
+  <div class="w-full h-32 bg-white sm:bg-white max-sm:bg-blue-200">
+    Resize window to ≤600px → background turns lightblue
+  </div>
+
+  <!-- 2. Breakpoint with grid example -->
+  <div class="grid grid-cols-6 gap-2">
+    <div class="item1 col-span-6 sm:col-span-6 md:col-span-6">Item 1</div>
+    <div class="item2 col-span-6 sm:col-span-1 md:col-span-1">Item 2</div>
+    <div class="item3 col-span-6 sm:col-span-4 md:col-span-4">Item 3</div>
+    <div class="item4 col-span-6 sm:col-span-6 md:col-span-1">Item 4</div>
+    <div class="item5 col-span-6 sm:col-span-6 md:col-span-6">Item 5</div>
+  </div>
+
+  <!-- 3. Typical Device Breakpoints -->
+  <div class="w-full h-24 bg-gray-200 text-center flex items-center justify-center 
+              max-sm:bg-red-300 
+              sm:bg-green-300 
+              md:bg-yellow-300 
+              lg:bg-blue-300 
+              xl:bg-purple-300">
+    Resize to see color changes per device breakpoint
+  </div>
+
+  <!-- 4. Orientation Example -->
+  <div class="w-full h-24 bg-white text-center flex items-center justify-center 
+              md:landscape:bg-blue-200 md:portrait:bg-pink-200">
+    Changes color based on orientation (landscape = blue, portrait = pink)
+  </div>
+
+  <!-- 5. Hide Elements Example -->
+  <div class="example bg-gray-400 text-white p-4 sm:block max-sm:hidden">
+    I will be hidden on small screens (≤600px).
+  </div>
+
+  <!-- 6. Change Font Size -->
+  <div class="example text-center font-bold max-sm:text-[30px] sm:text-[80px]">
+    Variable Font Size
+  </div>
+
+</body>
+</html>

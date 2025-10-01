@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Grid Examples</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-10 space-y-10 bg-gray-100">
+
+  <!-- Heading -->
+  <h1 class="text-3xl font-bold text-center mb-10">📘 Tailwind CSS Grid Examples (Beginner → Advanced)</h1>
+
+  <!-- 1. Basic Grid -->
+  <section>
+    <h2 class="text-xl font-semibold mb-3">1️⃣ Basic Grid (3 Columns)</h2>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-red-300 p-4 text-center">1</div>
+      <div class="bg-green-300 p-4 text-center">2</div>
+      <div class="bg-blue-300 p-4 text-center">3</div>
+    </div>
+  </section>
+
+  <!-- 2. Fixed Number of Columns -->
+  <section>
+    <h2 class="text-xl font-semibold mb-3">2️⃣ Fixed Columns (2 Columns)</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-yellow-300 p-4 text-center">A</div>
+      <div class="bg-pink-300 p-4 text-center">B</div>
+      <div class="bg-purple-300 p-4 text-center">C</div>
+      <div class="bg-gray-300 p-4 text-center">D</div>
+    </div>
+  </section>
+
+  <!-- 3. Responsive Grid -->
+  <section>
+    <h2 class="text-xl font-semibold mb-3">3️⃣ Responsive Grid</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="bg-red-300 p-4 text-center">1</div>
+      <div class="bg-green-300 p-4 text-center">2</div>
+      <div class="bg-blue-300 p-4 text-center">3</div>
+      <div class="bg-yellow-300 p-4 text-center">4</div>
+    </div>
+  </section>
+
+  <!-- 4. Column Span -->
+  <section>
+    <h2 class="text-xl font-semibold mb-3">4️⃣ Column Span</h2>
+    <div class="grid grid-cols-4 gap-4">
+      <div class="col-span-2 bg-red-300 p-4 text-center">Span 2 Columns</div>
+      <div class="bg-green-300 p-4 text-center">B</div>
+      <div class="bg-blue-300 p-4 text-center">C</div>
+    </div>
+  </section>
+
+  <!-- 5. Row Span -->
+  <section>
+    <h2 class="text-xl font-semibold mb-3">5️⃣ Row Span</h2>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="row-span-2 bg-yellow-300 p-4 text-center">Row Span 2</div>
+      <div class="bg-pink-300 p-4 text-center">B</div>
+      <div class="bg-purple-300 p-4 text-center">C</div>
+      <div class="bg-gray-300 p-4 text-center">D</div>
+    </div>
+  </section>
+
+  <!-- 6. Nested Grid -->
+  <section>
+    <h2 class="text-xl font-semibold mb-3">6️⃣ Nested Grid</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-red-200 p-4">
+        Parent 1
+        <div class="grid grid-cols-2 gap-2 mt-2">
+          <div class="bg-red-400 p-2">1a</div>
+          <div class="bg-red-500 p-2">1b</div>
+        </div>
+      </div>
+      <div class="bg-green-200 p-4">
+        Parent 2
+        <div class="grid grid-cols-2 gap-2 mt-2">
+          <div class="bg-green-400 p-2">2a</div>
+          <div class="bg-green-500 p-2">2b</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Auto-fit / Auto-fill -->
+  <section>
+    <h2 class="text-xl font-semibold mb-3">7️⃣ Auto-fit / Auto-fill with minmax()</h2>
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4">
+      <div class="bg-blue-300 p-4 text-center">1</div>
+      <div class="bg-blue-400 p-4 text-center">2</div>
+      <div class="bg-blue-500 p-4 text-center">3</div>
+      <div class="bg-blue-600 p-4 text-center">4</div>
+      <div class="bg-blue-700 p-4 text-center">5</div>
+    </div>
+  </section>
+
+  <!-- 8. Advanced Dashboard Layout -->
+  <section>
+    <h2 class="text-xl font-semibold mb-3">8️⃣ Advanced Layout (Dashboard Example)</h2>
+    <div class="grid grid-cols-4 grid-rows-3 gap-4">
+      <div class="col-span-4 bg-gray-300 p-4 text-center">Header</div>
+      <div class="row-span-2 bg-gray-400 p-4 text-center">Sidebar</div>
+      <div class="col-span-3 bg-gray-200 p-4 text-center">Main Content</div>
+      <div class="col-span-3 bg-gray-500 p-4 text-center">Footer</div>
+    </div>
+  </section>
+
+</body>
+</html>
