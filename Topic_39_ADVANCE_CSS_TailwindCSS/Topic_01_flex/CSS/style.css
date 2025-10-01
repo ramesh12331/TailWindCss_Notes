@@ -1,0 +1,264 @@
+/* ****Example1 creates a flex container****** */
+
+/* This class creates a flex container */
+.flex-container {
+  display: flex;              /* Enables Flexbox layout */
+  background-color: DodgerBlue; /* Sets the container's background color */
+}
+
+/* Styles applied to direct child <div> elements inside .flex-container */
+.flex-container > div {
+  background-color: #f1f1f1; /* Light gray background for items */
+  margin: 10px;              /* Space outside each item */
+  padding: 20px;             /* Space inside each item */
+  font-size: 30px;           /* Large text size for readability */
+}
+
+/* ****Example2 The flex-direction Property****** */
+
+/* ---------- Flexbox Row Example ---------- */
+.flex-container1 {
+  display: flex;              /* Enables Flexbox */
+  flex-direction: row;        /* Places items in a row (default, but written for clarity) */
+  background-color: DodgerBlue; /* Blue background for the container */
+}
+
+.flex-container1 > div {
+  background-color: #f1f1f1;  /* Light gray items */
+  width: 100px;               /* Fixed width for each box */
+  margin: 10px;               /* Space between items */
+  text-align: center;         /* Centers text horizontally */
+  line-height: 75px;          /* Centers text vertically (since height = 75px) */
+  font-size: 30px;            /* Large text */
+}
+
+/* ---------- Flexbox Column Example ---------- */
+.flex-container2 {
+  display: flex;              /* Enables Flexbox */
+  flex-direction: column;     /* Stacks items vertically */
+  background-color: DodgerBlue; /* Blue background for the container */
+}
+
+.flex-container2 > div {
+  background-color: #f1f1f1;  /* Light gray items */
+  width: 100px;               /* Fixed width */
+  margin: 10px;               /* Space between items */
+  text-align: center;         /* Centers text horizontally */
+  line-height: 75px;          /* Vertically aligns text */
+  font-size: 30px;            /* Large text */
+}
+
+
+/* ---------- Flexbox Row-Reverse Example ---------- */
+.flex-container3 {
+  display: flex;                  /* Enables Flexbox */
+  flex-direction: row-reverse;    /* Places items in a row, but from right → left */
+  background-color: DodgerBlue;   /* Blue container background */
+}
+
+.flex-container3 > div {
+  background-color: #f1f1f1;      /* Light gray items */
+  width: 100px;                   /* Fixed width */
+  margin: 10px;                   /* Space between items */
+  text-align: center;             /* Centers text horizontally */
+  line-height: 75px;              /* Centers text vertically */
+  font-size: 30px;                /* Large text */
+}
+
+/* ---------- Flexbox Column-Reverse Example ---------- */
+.flex-container4 {
+  display: flex;                  /* Enables Flexbox */
+  flex-direction: column-reverse; /* Stacks items vertically, but from bottom → top */
+  background-color: DodgerBlue;   /* Blue container background */
+}
+
+.flex-container4 > div {
+  background-color: #f1f1f1;      /* Light gray items */
+  width: 100px;                   /* Fixed width */
+  margin: 10px;                   /* Space between items */
+  text-align: center;             /* Centers text horizontally */
+  line-height: 75px;              /* Centers text vertically */
+  font-size: 30px;                /* Large text */
+}
+
+.flex-container5 {
+  display: flex;                
+  /* flex-wrap property controls how flex items behave when they overflow */
+
+  /* flex-wrap: nowrap;      -> Default. Items stay on one line, may overflow. */
+  /* flex-wrap: wrap;        -> Items wrap onto new rows (top → bottom). */
+  /* flex-wrap: wrap-reverse;-> Items wrap onto new rows (bottom → top). */
+
+  flex-wrap: wrap;              /* ✅ Here: items will wrap to the next line */
+  background-color: DodgerBlue; /* Blue container */
+}
+
+.flex-container5 > div {
+  background-color: #f1f1f1;    /* Light gray items */
+  width: 100px;                 /* Fixed width for each item */
+  margin: 10px;                 /* Space between items */
+  text-align: center;           /* Centers text horizontally */
+  line-height: 75px;            /* Vertically centers text */
+  font-size: 30px;              /* Large text */
+}
+
+/* -------------------- SUMMARY --------------------
+   - flex-wrap decides if flex items should stay 
+     in one line or wrap to new lines.
+   - nowrap (default): All items in one row, may overflow.
+   - wrap: Items wrap onto new rows (below).
+   - wrap-reverse: Items wrap onto new rows (above).
+   - In this code: flex-wrap: wrap → items break into 
+     multiple rows when they don’t fit in one line.
+--------------------------------------------------- */
+/* ***************The justify-content Property************************* */
+.flex-container6 {
+  display: flex;                
+
+  /* justify-content controls horizontal alignment of items (main axis) */
+
+  /* justify-content: flex-start;   -> Default. Items align to the left */
+  /* justify-content: flex-end;     -> Items align to the right */
+  /* justify-content: center;       -> Items align in the center */
+  /* justify-content: space-between;-> First at start, last at end, equal space between */
+  /* justify-content: space-around; -> Equal space around items (outer space is half) */
+  justify-content: space-evenly;   /* Equal space between AND on the edges */
+
+  background-color: DodgerBlue;    /* Blue container background */
+}
+
+.flex-container6 > div {
+  background-color: #f1f1f1;       /* Light gray items */
+  width: 100px;                    /* Fixed width for each box */
+  margin: 10px;                    /* Space outside items */
+  text-align: center;              /* Centers text horizontally */
+  line-height: 75px;               /* Vertically centers text */
+  font-size: 30px;                 /* Large text */
+}
+
+/* -------------------- SUMMARY --------------------
+   justify-content decides how flex items are placed 
+   along the main axis (horizontal by default).
+   - flex-start   → Items stick to left
+   - flex-end     → Items stick to right
+   - center       → Items centered
+   - space-between→ Items spread with space in between
+   - space-around → Equal space around each item
+   - space-evenly → Equal space between all items and edges
+   In this code: space-evenly → perfectly even spacing across container.
+--------------------------------------------------- */
+/* **************The CSS align-items Property************* */
+.flex-container7 {
+  display: flex;
+  height: 200px;                 /* Fixed container height to see vertical alignment */
+
+  /* align-items controls vertical alignment (cross-axis) of flex items */
+
+  /* align-items: flex-start; -> Items align to the top of the container */
+  /* align-items: flex-end;   -> Items align to the bottom */
+  /* align-items: center;     -> Items align in the middle (vertically centered) */
+  /* align-items: stretch;    -> Items stretch to fill container height (default if no fixed height on items) */
+  align-items: baseline;         /* Align items by their text baseline (useful if font-sizes differ) */
+
+  background-color: DodgerBlue;  /* Blue container background */
+}
+
+.flex-container7 > div {
+  background-color: #f1f1f1;     /* Light gray boxes */
+  width: 100px;                  /* Fixed width for each box */
+  margin: 10px;                  /* Space around boxes */
+  text-align: center;            /* Centers text horizontally */
+  line-height: 75px;             /* Controls vertical text spacing */
+  font-size: 30px;               /* Large text size */
+}
+
+/* -------------------- SUMMARY --------------------
+   align-items controls how items are aligned 
+   along the cross-axis (vertical if flex-direction is row).
+
+   - flex-start → Aligns to top
+   - flex-end   → Aligns to bottom
+   - center     → Aligns to vertical middle
+   - stretch    → Stretches items to fill height
+   - baseline   → Aligns items by their text baseline
+
+   In this code: baseline → items align according 
+   to the baseline of their text (useful if items 
+   have different font sizes).
+--------------------------------------------------- */
+.flex-container8 {
+  display: flex;
+  height: 600px;                 /* Container height (so multiple rows have space) */
+  flex-wrap: wrap;               /* Items wrap onto multiple rows (required for align-content to work) */
+
+  /* align-content controls spacing between flex lines (rows/columns) along cross-axis */
+
+  /* align-content: flex-start;   -> Lines packed at the top */
+  /* align-content: flex-end;     -> Lines packed at the bottom */
+  /* align-content: center;       -> Lines packed in the middle */
+  /* align-content: stretch;      -> Lines stretch to fill container (default) */
+  /* align-content: space-between;-> Equal space between lines, none at edges */
+  /* align-content: space-around; -> Equal space around each line (outer space = half of inner) */
+  align-content: space-evenly;    /* Equal space between lines and also at edges */
+
+  overflow: scroll;              /* Adds scroll if content overflows */
+  background-color: DodgerBlue;  /* Blue background */
+}
+
+.flex-container8 > div {
+  background-color: #f1f1f1;     /* Light gray items */
+  width: 100px;                  /* Fixed width per box */
+  margin: 10px;                  /* Space between items */
+  text-align: center;            /* Centers text horizontally */
+  line-height: 75px;             /* Vertical text alignment */
+  font-size: 30px;               /* Large readable text */
+}
+
+/* -------------------- SUMMARY --------------------
+   align-content ONLY works when:
+   - flex-wrap: wrap (or wrap-reverse) is enabled
+   - container has extra space along cross-axis
+
+   It decides how multiple rows/columns of items 
+   are spaced vertically (if flex-direction: row).
+
+   Options:
+   - flex-start   → All rows at the top
+   - flex-end     → All rows at the bottom
+   - center       → Rows in the middle
+   - stretch      → Rows expand to fill space
+   - space-between→ Equal gaps between rows
+   - space-around → Equal gaps around rows (outer gaps smaller)
+   - space-evenly → Equal gaps everywhere
+
+   In this code: space-evenly → rows are evenly spaced 
+   from top to bottom inside the container.
+--------------------------------------------------- */
+
+
+/* **********Perfect Centering************* */
+.flex-container9 {
+  display: flex;                   /* Enables flexbox */
+  
+  justify-content: center;         /* Horizontally center items (main axis) */
+  align-items: center;              /* Vertically center items (cross axis) */
+
+  height: 300px;                    /* Container height */
+  background-color: DodgerBlue;     /* Blue background */
+}
+
+.flex-container9 > div {
+  background-color: #f1f1f1;        /* Light gray box */
+  color: white;                     /* White text (but here text won’t be visible well on #f1f1f1) */
+  width: 100px;                     /* Fixed width */
+  height: 100px;                    /* Fixed height */
+}
+
+/* -------------------- SUMMARY --------------------
+   - justify-content: center → Centers item horizontally
+   - align-items: center     → Centers item vertically
+   - Together, they place the child element(s) at the 
+     exact middle of the container (perfect centering).
+   In this code: The single box will appear at the 
+   center of a 300px tall blue container.
+--------------------------------------------------- */
