@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧮 CSS Functions & Calculations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6 min-h-screen space-y-6">
+
+  <!-- calc() Example -->
+  <div class="[width:calc(100%-2rem)] bg-indigo-600 text-white p-5 rounded-lg">
+    📐 <strong>calc()</strong> Example: width = calc(100% - 2rem)
+  </div>
+
+  <!-- clamp() Example -->
+  <h1 class="[font-size:clamp(1rem,2vw,2rem)] font-bold text-indigo-700">
+    🔠 <strong>clamp()</strong> Example: responsive font size
+  </h1>
+
+  <!-- min() Example -->
+  <div class="[width:min(80%,400px)] bg-orange-500 text-white p-5 rounded-lg">
+    📏 <strong>min()</strong> Example: width = min(80%, 400px)
+  </div>
+
+  <!-- max() Example -->
+  <div class="[width:max(300px,50%)] bg-green-500 text-white p-5 rounded-lg">
+    📏 <strong>max()</strong> Example: width = max(300px, 50%)
+  </div>
+
+  <!-- Combined Functions Example -->
+  <div class="[width:clamp(200px,50%,600px)] [padding:calc(1rem+2vw)] [height:min(max(300px,50%),500px)] bg-indigo-600 text-white rounded-lg flex items-center justify-center">
+    ⚡ <strong>Combined CSS Functions</strong> Example
+  </div>
+
+  <!-- Responsive Grid using Functions -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="[width:clamp(150px,30%,250px)] bg-purple-500 text-white p-4 rounded-lg text-center">Grid Item 1</div>
+    <div class="[width:clamp(150px,30%,250px)] bg-purple-500 text-white p-4 rounded-lg text-center">Grid Item 2</div>
+    <div class="[width:clamp(150px,30%,250px)] bg-purple-500 text-white p-4 rounded-lg text-center">Grid Item 3</div>
+  </div>
+
+</body>
+</html>

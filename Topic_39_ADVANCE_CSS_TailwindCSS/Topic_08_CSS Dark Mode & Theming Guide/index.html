@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌙 CSS Dark Mode & Theming - Tailwind Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+    }
+
+    .dark {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center font-sans p-8">
+
+  <!-- 🌗 Theme Toggle Button -->
+  <button id="toggleTheme" class="px-5 py-2 mb-8 rounded-lg bg-gray-200 text-black dark:bg-gray-800 dark:text-white font-semibold shadow-md hover:scale-105 transition">
+    🌓 Toggle Theme
+  </button>
+
+  <!-- 🎨 Themed Card -->
+  <div class="max-w-md w-full p-6 rounded-2xl shadow-2xl backdrop-blur-md bg-white/40 dark:bg-gray-800/40 border border-white/30 dark:border-gray-700/30 transition">
+    <h1 class="text-3xl font-bold mb-3 text-gray-800 dark:text-gray-100 text-center">🌙 CSS Dark Mode & Theming</h1>
+    <p class="text-gray-700 dark:text-gray-300 text-center">
+      Learn to build responsive themes using CSS variables, media queries, and Tailwind dark mode utilities.
+    </p>
+  </div>
+
+  <!-- 💎 Glassmorphic Card -->
+  <div class="mt-10 relative w-full max-w-md p-6 rounded-2xl shadow-lg border border-white/30 bg-white/20 dark:bg-gray-800/30 backdrop-blur-md text-center transition">
+    <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">✨ Glassmorphic Card</h2>
+    <p class="text-gray-600 dark:text-gray-300">Adapts automatically to light or dark theme!</p>
+  </div>
+
+  <footer class="mt-10 text-sm text-gray-700 dark:text-gray-400 text-center">
+    📘 Author: <span class="font-semibold">Ramesh</span> • 💡 Topic: CSS Dark Mode & Theming
+  </footer>
+
+  <!-- 🌈 Script for Toggle -->
+  <script>
+    const toggleBtn = document.getElementById("toggleTheme");
+    const html = document.documentElement;
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      html.classList.add("dark");
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      html.classList.toggle("dark");
+      const theme = html.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Filters & Backdrop Filters — Tailwind Playground</title>
+  <meta name="description" content="Examples of CSS filter and backdrop-filter effects using Tailwind CSS." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+  </style>
+</head>
+<body class="text-slate-900 antialiased min-h-screen flex flex-col items-center justify-start p-8 text-center">
+
+  <header class="text-white mb-8">
+    <h1 class="text-4xl font-extrabold mb-2">🎨 CSS Filters & Backdrop Filters</h1>
+    <p class="text-slate-200">Tailwind examples for blur, grayscale, brightness, and glassmorphism effects</p>
+    <p class="text-sm text-slate-300 mt-1">Author: <strong>Ramesh</strong></p>
+  </header>
+
+  <main class="w-full max-w-5xl grid gap-8 md:grid-cols-2">
+
+    <!-- Blur -->
+    <section class="bg-white/20 backdrop-blur-md rounded-2xl shadow-lg p-6 text-white">
+      <h2 class="text-xl font-semibold mb-3">🌫️ Blur Effect</h2>
+      <img src="https://picsum.photos/400/250" alt="Blur demo" class="filter blur-sm rounded-lg mb-3 w-full">
+      <p class="text-slate-100 mb-3">Applies a soft blur to an element. Tailwind supports <code class="font-mono">blur-sm</code> through <code class="font-mono">blur-xl</code>.</p>
+      <pre class="bg-black/30 p-3 rounded text-left text-xs overflow-auto"><code>&lt;img src="image.jpg" class="filter blur-sm"&gt;</code></pre>
+    </section>
+
+    <!-- Grayscale -->
+    <section class="bg-white/20 backdrop-blur-md rounded-2xl shadow-lg p-6 text-white">
+      <h2 class="text-xl font-semibold mb-3">⚫ Grayscale Effect</h2>
+      <img src="https://picsum.photos/400/250?grayscale" alt="Grayscale demo" class="filter grayscale hover:grayscale-0 transition rounded-lg mb-3 w-full">
+      <p class="text-slate-100 mb-3">Converts the image to black & white. Hover to restore color.</p>
+      <pre class="bg-black/30 p-3 rounded text-left text-xs overflow-auto"><code>&lt;img src="photo.jpg" class="filter grayscale hover:grayscale-0 transition"&gt;</code></pre>
+    </section>
+
+    <!-- Brightness -->
+    <section class="bg-white/20 backdrop-blur-md rounded-2xl shadow-lg p-6 text-white">
+      <h2 class="text-xl font-semibold mb-3">💡 Brightness Effect</h2>
+      <img src="https://picsum.photos/400/250" alt="Brightness demo" class="filter brightness-125 hover:brightness-100 transition rounded-lg mb-3 w-full">
+      <p class="text-slate-100 mb-3">Adjusts brightness of the element. <code class="font-mono">brightness-125</code> increases lightness by 25%.</p>
+      <pre class="bg-black/30 p-3 rounded text-left text-xs overflow-auto"><code>&lt;img src="photo.jpg" class="filter brightness-125 hover:brightness-100 transition"&gt;</code></pre>
+    </section>
+
+    <!-- Glassmorphism / Backdrop Filter -->
+    <section class="relative flex items-center justify-center bg-cover bg-center rounded-2xl overflow-hidden shadow-lg" style="background-image: url('https://picsum.photos/800/500?blur=2');">
+      <div class="absolute inset-0 bg-black/30"></div>
+      <div class="relative w-80 h-48 bg-white/10 border border-white/30 backdrop-blur-lg backdrop-brightness-125 rounded-xl flex items-center justify-center text-white font-semibold text-lg">
+        🧊 Glassmorphism Card
+      </div>
+      <div class="absolute bottom-4 left-4 right-4 text-xs text-slate-200 bg-black/40 p-2 rounded">
+        &lt;div class="bg-white/10 backdrop-blur-lg border border-white/30 rounded-xl"&gt;&lt;/div&gt;
+      </div>
+    </section>
+
+  </main>
+
+  <section class="mt-10 bg-white/20 backdrop-blur-md rounded-2xl p-6 w-full max-w-4xl text-white">
+    <h3 class="text-lg font-semibold mb-3">🧠 Interview Q&A</h3>
+    <div class="text-left text-slate-100 space-y-2 text-sm">
+      <p><strong>Q1:</strong> Difference between <code>filter</code> and <code>backdrop-filter</code>?<br><span class="text-slate-300">→ <code>filter</code> affects the element itself, while <code>backdrop-filter</code> affects what’s behind it.</span></p>
+      <p><strong>Q2:</strong> Can multiple filters be combined?<br><span class="text-slate-300">→ Yes! Example: <code>filter: blur(5px) brightness(1.2);</code></span></p>
+      <p><strong>Q3:</strong> How to create glassmorphism in Tailwind?<br><span class="text-slate-300">→ Combine <code>bg-white/10</code>, <code>backdrop-blur</code>, <code>border-white/30</code>, and <code>rounded-xl</code>.</span></p>
+    </div>
+  </section>
+
+  <footer class="text-slate-300 mt-10 text-sm">Made with ♥ by Ramesh · Demo file: <code>index.html</code></footer>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎨 CSS Variables Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Define CSS Variables in :root */
+    :root {
+      --primary-color: #4f46e5;
+      --secondary-color: #f97316;
+      --text-color: #ffffff;
+      --bg-color: #ffffff;
+      --spacing: 1rem;
+      --heading-font: 'Arial', sans-serif;
+    }
+
+    /* Dark Mode Variables */
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+    }
+
+    /* Tailwind will still respect variables if used with arbitrary values */
+  </style>
+</head>
+<body class="bg-[var(--bg-color)] text-[var(--text-color)] transition-colors duration-300 p-6 space-y-6">
+
+  <!-- Themed Buttons -->
+  <div class="space-x-4">
+    <button class="[background-color:var(--primary-color)] text-[var(--text-color)] p-2 rounded">
+      Primary Button
+    </button>
+    <button class="[background-color:var(--secondary-color)] text-[var(--text-color)] p-2 rounded">
+      Secondary Button
+    </button>
+  </div>
+
+  <!-- Tailwind Theme Card -->
+  <div class="bg-[var(--bg-color)] dark:bg-gray-900 text-[var(--text-color)] p-4 rounded shadow">
+    🌗 Tailwind Theme Example
+  </div>
+
+  <!-- Heading with Variable Spacing & Font -->
+  <h1 class="[margin-bottom:var(--spacing)] [font-family:var(--heading-font)] text-2xl">
+    Heading with Variable Spacing & Font
+  </h1>
+
+  <!-- Light/Dark Toggle Button -->
+  <button id="toggleTheme" class="p-2 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white">
+    🌗 Toggle Theme
+  </button>
+
+  <!-- Paragraph to show theme effect -->
+  <p class="text-[var(--text-color)]">
+    Hello! This text changes color based on the theme.
+  </p>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleTheme");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+
+</body>
+</html>
