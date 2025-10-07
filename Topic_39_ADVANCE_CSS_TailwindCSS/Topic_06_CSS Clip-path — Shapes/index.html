@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Clip-path Playground — Tailwind Examples</title>
+  <meta name="description" content="Interactive examples of clip-path shapes with Tailwind CSS (circle, ellipse, polygon, inset, path)." />
+  <!-- Tailwind CDN (Play) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Tiny utilities for demo only */
+    .demo-card { -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+    pre code { display: block; white-space: pre-wrap; }
+    /* Make code blocks scroll horizontally on small screens */
+    .code-wrap { overflow:auto; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+  <main class="max-w-6xl mx-auto p-6">
+    <header class="mb-8">
+      <h1 class="text-3xl font-extrabold mb-2">🎨 CSS <code class="font-mono">clip-path</code> — Tailwind Playground</h1>
+      <p class="text-slate-600">Live examples of <code class="font-mono">circle</code>, <code class="font-mono">ellipse</code>, <code class="font-mono">polygon</code>, <code class="font-mono">inset</code> and <code class="font-mono">path</code> using Tailwind's arbitrary value syntax.</p>
+      <p class="text-sm text-slate-500 mt-2">Author: <strong>Ramesh</strong></p>
+    </header>
+
+    <section class="grid gap-6 md:grid-cols-2">
+      <!-- Circle -->
+      <article class="bg-white rounded-2xl shadow p-5">
+        <h2 class="text-xl font-semibold mb-3">🔵 Circle</h2>
+        <div class="flex items-center gap-4">
+          <div class="w-48 h-48 rounded-lg overflow-hidden demo-card bg-orange-400 [clip-path:circle(50%_at_50%_50%)] flex items-center justify-center text-white font-bold">circle</div>
+          <div class="flex-1">
+            <p class="text-slate-600 mb-3">Centered circle with <code class="font-mono">radius: 50%</code>.</p>
+            <div class="code-wrap bg-slate-100 p-3 rounded">
+              <pre><code class="language-css">/* Tailwind */
+&lt;div class="w-48 h-48 bg-orange-400 [clip-path:circle(50%_at_50%_50%)]"&gt;&lt;/div&gt;
+
+/* Plain CSS */
+.element { clip-path: circle(50% at 50% 50%); }</code></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ellipse -->
+      <article class="bg-white rounded-2xl shadow p-5">
+        <h2 class="text-xl font-semibold mb-3">🟣 Ellipse</h2>
+        <div class="flex items-center gap-4">
+          <div class="w-72 h-48 rounded-lg overflow-hidden demo-card bg-violet-400 [clip-path:ellipse(50%_30%_at_50%_50%)] flex items-center justify-center text-white font-semibold">ellipse</div>
+          <div class="flex-1">
+            <p class="text-slate-600 mb-3">Horizontal radius 50%, vertical radius 30%.</p>
+            <div class="code-wrap bg-slate-100 p-3 rounded">
+              <pre><code class="language-css">&lt;div class="w-72 h-48 bg-violet-400 [clip-path:ellipse(50%_30%_at_50%_50%)]"&gt;&lt;/div&gt;
+
+/* CSS */
+.element { clip-path: ellipse(50% 30% at 50% 50%); }</code></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Polygon examples -->
+      <article class="bg-white rounded-2xl shadow p-5">
+        <h2 class="text-xl font-semibold mb-3">🔷 Polygon (Triangle / Diamond)</h2>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="p-3 rounded-lg bg-sky-50 flex flex-col items-center">
+            <div class="w-40 h-40 bg-sky-400 [clip-path:polygon(50%_0%,0%_100%,100%_100%)] flex items-end justify-center text-white font-semibold rounded">triangle</div>
+            <div class="mt-3 code-wrap w-full bg-slate-100 p-2 rounded text-xs">
+              &lt;div class="w-40 h-40 bg-sky-400 [clip-path:polygon(50%_0%,0%_100%,100%_100%)]"&gt;&lt;/div&gt;
+            </div>
+          </div>
+
+          <div class="p-3 rounded-lg bg-sky-50 flex flex-col items-center">
+            <div class="w-40 h-40 bg-indigo-400 [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)] flex items-center justify-center text-white font-semibold rounded">diamond</div>
+            <div class="mt-3 code-wrap w-full bg-slate-100 p-2 rounded text-xs">
+              &lt;div class="w-40 h-40 bg-indigo-400 [clip-path:polygon(50%_0%,100%_50%,50%_100%,0%_50%)]"&gt;&lt;/div&gt;
+            </div>
+          </div>
+        </div>
+        <p class="text-sm text-slate-500 mt-3">Tip: polygon points are connected in order — try editing the coordinates to craft custom shapes.</p>
+      </article>
+
+      <!-- Inset -->
+      <article class="bg-white rounded-2xl shadow p-5">
+        <h2 class="text-xl font-semibold mb-3">🟥 Inset</h2>
+        <div class="flex items-center gap-4">
+          <div class="w-72 h-48 rounded-lg overflow-hidden demo-card bg-red-400 [clip-path:inset(10px_20px_30px_40px)] flex items-center justify-center text-white font-semibold">inset</div>
+          <div class="flex-1">
+            <p class="text-slate-600 mb-3">Cuts the box inward by top/right/bottom/left values.</p>
+            <div class="code-wrap bg-slate-100 p-3 rounded">
+              <pre><code class="language-css">&lt;div class="w-72 h-48 bg-red-400 [clip-path:inset(10px_20px_30px_40px)]"&gt;&lt;/div&gt;
+
+/* CSS */
+.element { clip-path: inset(10px 20px 30px 40px); }</code></pre>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Path (SVG) -->
+      <article class="bg-white rounded-2xl shadow p-5">
+        <h2 class="text-xl font-semibold mb-3">🟡 Path (SVG)</h2>
+        <div class="flex items-start gap-4">
+          <div class="w-48 h-48 rounded-lg overflow-hidden demo-card bg-yellow-400 [clip-path:path('M10_10_h80_v80_h-80_Z')] flex items-center justify-center text-white font-semibold">path</div>
+          <div class="flex-1">
+            <p class="text-slate-600 mb-3">Use SVG path data. When using Tailwind arbitrary values, replace spaces with underscores (<code class="font-mono">_</code>).</p>
+            <div class="code-wrap bg-slate-100 p-3 rounded">
+              <pre><code class="language-css">&lt;!-- Tailwind (spaces replaced with underscores) --&gt;
+&lt;div class="w-48 h-48 bg-yellow-400 [clip-path:path('M10_10_h80_v80_h-80_Z')]"&gt;&lt;/div&gt;
+
+/* Plain CSS */
+.element { clip-path: path('M10 10 h80 v80 h-80 Z'); }</code></pre>
+            </div>
+            <p class="text-sm text-slate-500 mt-2">Note: Browser support for <code class="font-mono">clip-path: path()</code> is improving but may vary. Use fallbacks if needed.</p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="mt-8 bg-white p-6 rounded-2xl shadow">
+      <h3 class="text-lg font-semibold mb-3">⚙️ Playground & Tips</h3>
+      <ul class="list-disc ml-5 text-slate-600 space-y-2">
+        <li>Use <a class="text-sky-600 underline" href="https://bennettfeely.com/clippy/" target="_blank">Clippy</a> to visually generate polygon points and paths.</li>
+        <li>When using Tailwind arbitrary values: spaces inside the value are written as underscores. Example: <code class="font-mono">[clip-path:ellipse(50%_30%_at_50%_50%)]</code>.</li>
+        <li>Combine <code class="font-mono">clip-path</code> with gradients, background images, or transforms for dramatic hero sections.</li>
+        <li>Test on multiple browsers — especially for complex <code class="font-mono">path()</code> usage.</li>
+      </ul>
+    </section>
+
+    <footer class="mt-8 text-sm text-slate-500">Made with ♥ by Ramesh · Demo file: <code>index.html</code></footer>
+  </main>
+
+  <!-- Optional: small script to copy code block text when clicked (progressive enhancement) -->
+  <script>
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-copy]');
+      if (!btn) return;
+      const code = btn.previousElementSibling?.innerText || btn.dataset.clip;
+      if (!code) return;
+      navigator.clipboard?.writeText(code).then(() => {
+        const old = btn.innerText;
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = old, 1200);
+      }).catch(()=>{
+        alert('Copy failed — select and copy manually.');
+      });
+    });
+  </script>
+</body>
+</html>
